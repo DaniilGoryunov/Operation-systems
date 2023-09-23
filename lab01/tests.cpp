@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "solve.hpp"
+#include "child.cpp"
 
 TEST(test01, vowels) {
     std::string s = "this website is for losers lol!";
