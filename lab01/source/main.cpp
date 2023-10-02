@@ -3,8 +3,6 @@
 #include <string>
 #include <unistd.h>
 
-
-
 int main() {
     std::string filename;
     std::cin >> filename;

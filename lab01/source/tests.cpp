@@ -1,39 +1,39 @@
 #include <gtest/gtest.h>
-#include "child.cpp"
+#include "child.hpp"
 
-TEST(test01, vowels) {
+TEST(test01, sum41) {
     std::string s = "this website is for losers lol!";
-    ASSERT_TRUE(number_vowels(s) == 9);
+    ASSERT_TRUE(sum(s) == 9);
 }
 
-TEST(test02, vowels) {
+TEST(test02, sum41) {
     std::string s = "aeiou";
-    ASSERT_TRUE(number_vowels(s) == 5);
+    ASSERT_TRUE(sum(s) == 5);
 }
 
-TEST(test03, vowels) {
+TEST(test03, sum41) {
     std::string s = "bcdBCD";
-    ASSERT_TRUE(number_vowels(s) == 0);
+    ASSERT_TRUE(sum(s) == 0);
 }
 
-TEST(test04, vowels) {
+TEST(test04, sum41) {
     std::string s = "a b c d e?";
-    ASSERT_TRUE(number_vowels(s) == 2);
+    ASSERT_TRUE(sum(s) == 2);
 }
 
-TEST(test05, vowels) {
+TEST(test05, sum41) {
     std::string s = " ";
-    ASSERT_TRUE(number_vowels(s) == 0);
+    ASSERT_TRUE(sum(s) == 0);
 }
 
-TEST(test06, vowels) {
+TEST(test06, sum41) {
     std::string s = "        ";
-    ASSERT_TRUE(number_vowels(s) == 0);
+    ASSERT_TRUE(sum(s) == 0);
 }
 
-TEST(test07, vowels) {
+TEST(test07, sum41) {
     std::string s = "daniil";
-    ASSERT_TRUE(number_vowels(s) == 3);
+    ASSERT_TRUE(sum(s) == 3);
 }
 
 int main(int argc, char **argv) {

@@ -8,6 +8,7 @@ set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 add_executable(build/child source/child.cpp)
+add_executable(build/main source/main.cpp)
 
 enable_testing()
 add_executable(build/tests source/tests.cpp  source/main.cpp)

@@ -12,6 +12,7 @@ int main(int argc, char* argv[]) {
     }
 
     f << sum << '\n';
+
     f.close();
 
     return 0;
