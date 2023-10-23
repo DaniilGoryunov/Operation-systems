@@ -1,39 +1,33 @@
 #include <gtest/gtest.h>
-#include "child.hpp"
+#include <iostream>
+#include <fstream>
+#include "parent.hpp"
 
-TEST(test01, sum41) {
-    std::string s = "this website is for losers lol!";
-    ASSERT_TRUE(sum(s) == 9);
+void TestParent(const std::string &src, const std::string &check, const std::string &str) {
+    std::istringstream srcStream(src);
+    std::streambuf* buf = std::cin.rdbuf(srcStream.rdbuf());
+
+    Parent();
+
+    std::ifstream in;
+    in.open(str);
+    std::string res;
+    std::getline(in, res);
+    in.close();
+
+    ASSERT_EQ(res, check);    
 }
 
-TEST(test02, sum41) {
-    std::string s = "aeiou";
-    ASSERT_TRUE(sum(s) == 5);
+TEST(test01, sum1) {
+    std::string s = "file.txt 1 2 3 4 5";
+    std::string check = "15";
+    TestParent(s, check, "file.txt");
 }
 
-TEST(test03, sum41) {
-    std::string s = "bcdBCD";
-    ASSERT_TRUE(sum(s) == 0);
-}
-
-TEST(test04, sum41) {
-    std::string s = "a b c d e?";
-    ASSERT_TRUE(sum(s) == 2);
-}
-
-TEST(test05, sum41) {
-    std::string s = " ";
-    ASSERT_TRUE(sum(s) == 0);
-}
-
-TEST(test06, sum41) {
-    std::string s = "        ";
-    ASSERT_TRUE(sum(s) == 0);
-}
-
-TEST(test07, sum41) {
-    std::string s = "daniil";
-    ASSERT_TRUE(sum(s) == 3);
+TEST(test01, sum2) {
+    std::string s = "file1.txt 1 2 3 4";
+    std::string check = "10";
+    TestParent(s, check, "file1.txt");
 }
 
 int main(int argc, char **argv) {
