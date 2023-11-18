@@ -3,31 +3,38 @@
 #include <fstream>
 #include "parent.hpp"
 
-void TestParent(const std::string &src, const std::string &check, const std::string &str) {
-    std::istringstream srcStream(src);
-    std::streambuf* buf = std::cin.rdbuf(srcStream.rdbuf());
+void TestParent(const std::string &src, const std::string &check) {
+    std::stringstream srcStream;
+    const char* filename = "test.txt";
 
-    Parent();
+    srcStream << filename << " " << src;
 
-    std::ifstream in;
-    in.open(str);
+    Parent(getenv("PATH_TO_CHILD"), srcStream);
+
+    std::ifstream in(filename);
     std::string res;
     std::getline(in, res);
-    in.close();
+    EXPECT_EQ(res, check);
+    std::remove(filename);
 
-    ASSERT_EQ(res, check);    
 }
 
 TEST(test01, sum1) {
-    std::string s = "file.txt 1 2 3 4 5";
+    std::string s = "1 2 3 4 5";
     std::string check = "15";
-    TestParent(s, check, "file.txt");
+    TestParent(s, check);
 }
 
 TEST(test01, sum2) {
-    std::string s = "file1.txt 1 2 3 4";
-    std::string check = "10";
-    TestParent(s, check, "file1.txt");
+    std::string s = "1 2 3";
+    std::string check = "6";
+    TestParent(s, check);
+}
+
+TEST(test02, sum2) {
+    std::string s = "";
+    std::string check = "0";
+    TestParent(s, check);
 }
 
 int main(int argc, char **argv) {

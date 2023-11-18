@@ -1,8 +1,8 @@
 #include "parent.hpp"
 
-int Parent() {
+int Parent(const char* path_to_child, std::istream &in) {
     std::string filename;
-    std::cin >> filename;
+    in >> filename;
     int pipe1_fd[2];
     pipe(pipe1_fd);
     int id = fork();
@@ -14,11 +14,12 @@ int Parent() {
         close(pipe1_fd[0]);
 
         float num;
-        while (std::cin >> num) {
+        while (in >> num) {
             write(pipe1_fd[1], &num, sizeof(num));
         }
 
         close(pipe1_fd[1]);
+        wait(nullptr);
     }
     else{
         close(pipe1_fd[1]);
@@ -28,7 +29,7 @@ int Parent() {
             return 1;
         }
 
-        execl("./child", "./child", filename.c_str(), NULL);
+        execl(path_to_child, path_to_child, filename.c_str(), nullptr);
 
         close(pipe1_fd[0]);
     }
