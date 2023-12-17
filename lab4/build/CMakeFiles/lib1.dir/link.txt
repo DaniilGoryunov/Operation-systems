@@ -1,0 +1,1 @@
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=14.0 -dynamiclib -Wl,-headerpad_max_install_names -o liblib1.dylib -install_name @rpath/liblib1.dylib "CMakeFiles/lib1.dir/lib/pi-sin-1.c.o"  -lm 

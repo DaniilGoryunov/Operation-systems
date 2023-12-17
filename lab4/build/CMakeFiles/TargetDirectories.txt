@@ -1,0 +1,6 @@
+/Users/admin/Desktop/МАИ/второй/oc/git/черновики/lab_os/lab4/build/CMakeFiles/lib1.dir
+/Users/admin/Desktop/МАИ/второй/oc/git/черновики/lab_os/lab4/build/CMakeFiles/lib2.dir
+/Users/admin/Desktop/МАИ/второй/oc/git/черновики/lab_os/lab4/build/CMakeFiles/static.dir
+/Users/admin/Desktop/МАИ/второй/oc/git/черновики/lab_os/lab4/build/CMakeFiles/dinamic.dir
+/Users/admin/Desktop/МАИ/второй/oc/git/черновики/lab_os/lab4/build/CMakeFiles/edit_cache.dir
+/Users/admin/Desktop/МАИ/второй/oc/git/черновики/lab_os/lab4/build/CMakeFiles/rebuild_cache.dir
